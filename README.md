@@ -29,6 +29,8 @@ bash
 Copy
 Edit
 !wget -O /content/data.zip https://s3.us-west-1.amazonaws.com/evanjuras.com/resources/candy_data_06JAN25.zip
+
+
 3.🗂️ Split Dataset
 
 Automatically divides into training and validation sets using:
@@ -37,6 +39,8 @@ bash
 Copy
 Edit
 !python train_val_split.py --datapath="/content/custom_data" --train_pct=0.9
+
+
 4.⚙️ Configure Training
 
 Auto-generate data.yaml config file from classes.txt
@@ -49,6 +53,7 @@ bash
 Copy
 Edit
 !yolo detect train data=/content/data.yaml model=yolo11s.pt epochs=60 imgsz=640
+
 6.🧪 Test & Visualize
 
 Run predictions on validation data and visualize:
@@ -57,6 +62,7 @@ bash
 Copy
 Edit
 !yolo detect predict model=runs/detect/train/weights/best.pt source=data/validation/images save=True
+
 7.📦 Export & Deploy
 
 Zip trained model (my_model.pt) and download
